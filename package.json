@@ -1,7 +1,7 @@
 {
     "name": "nativescript-search-view",
-    "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "version": "1.0.1",
+    "description": "A customed Search View NativeScript plugin.",
     "main": "search-view",
     "typings": "index.d.ts",
     "nativescript": {

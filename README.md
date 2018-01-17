@@ -22,7 +22,7 @@ Sample 1
 ## Installation
 
 ```javascript
-tns plugin add nativescript-segment-view
+tns plugin add nativescript-search-view
 ```
 
 ## Usage 
