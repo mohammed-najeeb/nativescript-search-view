@@ -1,7 +1,6 @@
 {
     "name": "nativescript-search-view",
     "version": "1.0.0",
-    "private": true,
     "description": "Your awesome NativeScript plugin.",
     "main": "search-view",
     "typings": "index.d.ts",
@@ -39,8 +38,8 @@
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "xushsh163",
+        "email": "xushsh163@163.com"
     },
     "bugs": {
         "url": "https://github.com/xushsh163/nativescript-search-view/issues"
