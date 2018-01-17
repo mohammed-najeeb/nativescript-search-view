@@ -1,0 +1,15 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
+  xmlns:ui="nativescript-search-view">
+  <StackLayout class="p-20">
+    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <ui:SearchView  loaded="svLoaded" hint="Input keyword" clear="onClear" submit="onSubmit"
+      btnClick="onBtnClick"
+      cancelButtonText="Search"
+      searchBarIcon="~/images/search.png"
+      clearIcon="~/images/clear.png"
+      style="corner-radius:2.0;border-width:1;border-color:#FF0000;search-field-cursor-color:#FFFF00;search-field-text-color:#FFFF00;
+    search-field-background-color:green;placeholder-color:#FFFF00;cancel-button-text-color:blue;" />
+    <ui:SearchView  loaded="svLoaded" hint="Input keyword" clear="onClear" submit="onSubmit"
+      btnClick="onBtnClick" style="corner-radius:2.0;border-width:1;border-color:#CCCCCC;" />
+  </StackLayout>
+</Page>

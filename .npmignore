@@ -1,0 +1,7 @@
+demo
+image
+node_modules
+*.map
+*.ts
+!*.d.ts
+tsconfig.json
