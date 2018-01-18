@@ -1,7 +1,7 @@
 demo
+demo-angular
 image
-node_modules
+*.log
 *.map
 *.ts
 !*.d.ts
-tsconfig.json

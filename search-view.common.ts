@@ -12,6 +12,7 @@ export abstract class SearchViewBase extends View implements SearchViewDefinitio
     public static submitEvent = "submit";
     public static clearEvent = "clear";
     public static btnClickEvent = "btnClick";
+    public static textChangedEvent = "textChanged";
     public text: string;
     public hint: string;
     public textFieldBackgroundColor: Color;

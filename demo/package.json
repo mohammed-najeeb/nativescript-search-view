@@ -9,6 +9,7 @@
     }
   },
   "dependencies": {
+    "nativescript-facebook": "^2.1.0",
     "nativescript-search-view": "file:///Users/xushsh/work/plugins/nativescript-search-view/src",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-unit-test-runner": "^0.3.4",

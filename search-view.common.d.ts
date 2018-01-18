@@ -8,6 +8,7 @@ export declare abstract class SearchViewBase extends View implements SearchViewD
     static submitEvent: string;
     static clearEvent: string;
     static btnClickEvent: string;
+    static textChangedEvent: string;
     text: string;
     hint: string;
     textFieldBackgroundColor: Color;

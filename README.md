@@ -48,19 +48,30 @@ tns plugin add nativescript-search-view
 
 ## Angular NativeScript
 
+the app.module.ts of your app
+
 ```TS
-import * as elementRegistryModule from 'nativescript-angular/element-registry';
-elementRegistryModule.registerElement("NSSearchView", () => require("nativescript-search-view").NSSegmentView);
+import { NativeScriptSearchViewModule } from "nativescript-search-view/angular";
+...
+@NgModule({
+    imports: [
+        ...
+        NativeScriptSearchViewModule,
+        ...
+    ]
+    ...
+})
+export class AppModule { }
 ```
 
 ```XML
-<NSSearchView id="1" (loaded)="onLoad()" (clear)="onClear()" (submit)="onSubmit($event)"
-    (btnClick)= "onBtnClick()"
+<SearchView id="1" (loaded)="onLoad()" (clear)="onClear()" (submit)="onSubmit($event)"
+    (btnClick)= "onBtnClick($event)"
     cancelButtonText="Search"
     searchBarIcon="~/images/search.png"
     clearIcon="~/images/clear.png"
     style="orner-radius:2.0;border-width:1;border-color:#FF0000;search-field-cursor-color:#FFFF00;search-field-text-color:#FFFF00;
-    search-field-background-color:green;placeholder-color:#FFFF00;cancel-button-text-color:blue;"></NSSearchView>
+    search-field-background-color:green;placeholder-color:#FFFF00;cancel-button-text-color:blue;"></SearchView>
 ```
     
 ## License
