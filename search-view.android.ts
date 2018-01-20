@@ -351,7 +351,7 @@ export class SearchView extends SearchViewBase {
     public createNativeView() {
         initializeNativeClasses();
         // const nativeView = new scut.carson_ho.searchview.SearchView(this._context, null);
-        console.log("this._context=" + this._context);
+        // console.log("this._context=" + this._context);
         const nativeView = new com.xushsh.searchview.XSSSearchView(this._context);
         // nativeView.setIconified(false);
 

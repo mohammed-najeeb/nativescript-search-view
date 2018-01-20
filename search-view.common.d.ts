@@ -15,6 +15,8 @@ export declare abstract class SearchViewBase extends View implements SearchViewD
     textFieldHintColor: Color;
     abstract dismissSoftInput(): any;
     _emit(eventNames: string): void;
+    loadFromFile(imageSource: any, path: string): boolean;
+    fromFile(imageSource: any, path: string): Promise<boolean>;
     createImageSourceFromSrc(value: string | ImageSource | ImageAsset, sync: boolean, imageLoaded: (source) => any): ImageSource;
 }
 export declare const textProperty: Property<SearchViewBase, string>;

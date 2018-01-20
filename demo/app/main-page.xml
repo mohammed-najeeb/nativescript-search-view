@@ -5,7 +5,7 @@
     <ui:SearchView  loaded="svLoaded" hint="Input keyword" clear="onClear" submit="onSubmit"
       btnClick="onBtnClick"
       cancelButtonText="Search"
-      searchBarIcon="~/images/search.png"
+      searchBarIcon="~/images/back.png"
       clearIcon="~/images/clear.png"
       style="corner-radius:2.0;border-width:1;border-color:#FF0000;search-field-cursor-color:#FFFF00;search-field-text-color:#FFFF00;
     search-field-background-color:green;placeholder-color:#FFFF00;cancel-button-text-color:blue;" />

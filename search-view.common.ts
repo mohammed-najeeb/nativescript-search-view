@@ -5,6 +5,8 @@ import { Image } from "tns-core-modules/ui/image";
 import { ImageSource, fromAsset, fromNativeSource, fromUrl } from "tns-core-modules/image-source/image-source";
 import { ImageAsset } from "tns-core-modules/image-asset";
 import { isDataURI, isFileOrResourcePath, RESOURCE_PREFIX } from "tns-core-modules/utils/utils";
+import { path as fsPath, knownFolders } from "tns-core-modules/file-system";
+import { isAndroid } from "tns-core-modules/platform";
 
 export * from "tns-core-modules/ui/core/view";
 
@@ -28,6 +30,25 @@ export abstract class SearchViewBase extends View implements SearchViewDefinitio
           this.notify({ eventName: event, object: this });
       }
   }
+
+  public loadFromFile(imageSource: any, path: string): boolean {
+        let fileName = typeof path === "string" ? path.trim() : "";
+        if (fileName.indexOf("~/") === 0) {
+            fileName = fsPath.join(knownFolders.currentApp().path, fileName.replace("~/", ""));
+        }
+
+        // this.setRotationAngleFromFile(fileName);
+        imageSource.android = android.graphics.BitmapFactory.decodeFile(fileName, null);
+
+        return imageSource.android != null;
+    }
+
+    public fromFile(imageSource: any, path: string): Promise<boolean> {
+        return new Promise<boolean>((resolve, reject) => {
+            resolve(this.loadFromFile(imageSource, path));
+        });
+    }
+
   public createImageSourceFromSrc(value: string | ImageSource | ImageAsset, sync: boolean, imageLoaded: (source) => any): ImageSource {
 
         let imageSource: ImageSource = new ImageSource();
@@ -54,9 +75,17 @@ export abstract class SearchViewBase extends View implements SearchViewDefinitio
                     }
                 } else {
                     if (sync) {
-                        imageSource.loadFromFile(value);
+                        if (isAndroid) {
+                            this.loadFromFile(imageSource, value);
+                        } else {
+                            imageSource.loadFromFile(value);
+                        }
                     } else {
-                        imageSource.fromFile(value).then(imageLoaded);
+                        if (isAndroid) {
+                            this.fromFile(imageSource, value).then(imageLoaded);
+                        } else {
+                            imageSource.fromFile(value).then(imageLoaded);
+                        }
                     }
                 }
             } else {
